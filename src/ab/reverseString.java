@@ -1,11 +1,16 @@
 package ab;
 
+import java.util.Scanner;
+
 public class reverseString {
 
 	public void reverse() {
-		String str = "madam";
+		System.out.println("Please enter String:-");
+		Scanner sc=new Scanner(System.in);
+		String str=sc.next();
+		
 		char[]revStr= str.toCharArray();
-		String rev="";
+		//String rev="";
 		
 		
 		for(int i=revStr.length-1;i>=0;i--) 
@@ -18,7 +23,8 @@ public class reverseString {
 		}
 	}
 	
-
+	
+		
 
 public static void main(String[] args) {
 	

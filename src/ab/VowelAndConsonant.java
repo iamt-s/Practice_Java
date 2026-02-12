@@ -8,7 +8,7 @@ import java.util.Map;
 public class VowelAndConsonant {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 String word="perplexity";
 		VowelAndConsonant vc=new VowelAndConsonant();
 		vc.vowels(word);

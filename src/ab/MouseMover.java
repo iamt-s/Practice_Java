@@ -28,7 +28,7 @@ public class MouseMover {
                 System.out.println("Moved to: (" + x + ", " + y + ")");
 
                 // Sleep for 1 second (1000 milliseconds)
-                Thread.sleep(50000);
+                Thread.sleep(90000);
             }
 
         } catch (AWTException | InterruptedException e) {

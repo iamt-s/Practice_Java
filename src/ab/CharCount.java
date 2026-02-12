@@ -2,7 +2,8 @@ package ab;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class CharCount {
 	
@@ -10,11 +11,21 @@ public class CharCount {
         
 		String word="aaffffffbbccdddddE";
 	
+		//CharCount.charC(word);
+		
+		//charcountWithouMap(word);		
+		charcountWithStream(word);
+		
+       }  
+	
+	
+	public static void charC(String word) {
+		
+		
 		int len= word.length();
 		//System.out.println(len);
 		Map<Character, Integer> cc=new HashMap<Character, Integer>();
-		
-		for(int i=0;i<len;i++) {
+	for(int i=0;i<len;i++) {
 			
 			
 			
@@ -32,7 +43,9 @@ public class CharCount {
 			
 		}
 				
-		//System.out.println(cc);
+		System.out.println(cc); // this will print the character count of each character
+		
+		//below logic is for character with Maximum frequency 
 		 char maxChar = 0;
 	        int maxCount = 0;
 
@@ -45,10 +58,44 @@ public class CharCount {
 
 	        // Step 3: Print the result
 	        System.out.println("Character with maximum frequency: " + maxChar + " = " + maxCount);
-			
+
+	}
 	
+	public static void charcountWithouMap(String word) {
 		
-       }  
+		//StringBuffer str=new StringBuffer();
+		
+		char[] strArray=word.toCharArray();
+		int[] freq = new int[120];
+		for(char ch:strArray) {
+			
+			freq[ch]++;
+			
+		}
+		
+		for(int i=0;i<freq.length;i++) {
+			if(freq[i]>0) {
+				
+				System.out.println("'" + (char) i + "' : " + freq[i]);
+			}
+			
+		}
+		
+		
+	}
+	
+	public static void charcountWithStream(String word) {
+		
+		Map<Character, Long> charCount =
+				word.chars()                       // Step 1
+                     .mapToObj(c -> (char) c)       // Step 2
+                     .collect(Collectors.groupingBy(   // Step 3
+                             ch->ch,
+                             Collectors.counting()
+                     ));
+		
+		System.out.println(charCount);
+	}
 }
 
 // Take the String 

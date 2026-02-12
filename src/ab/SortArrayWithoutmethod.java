@@ -7,7 +7,7 @@ public class SortArrayWithoutmethod {
 		
 		for(int i=0;i<numbers.length;i++) {
 			
-			for(int j=0;j<numbers.length-1-i;j++) {
+			for(int j=0;j<numbers.length-1;j++) {
 			
 			if(numbers[j]>numbers[j+1]) {
 				int tempNum=numbers[j];
@@ -15,8 +15,7 @@ public class SortArrayWithoutmethod {
 				numbers[j+1]=tempNum;
 				}
 			}
-			
-			
+						
 		}
 		
 		System.out.println("Sorted Arra is:-");
