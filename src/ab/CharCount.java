@@ -72,7 +72,7 @@ public class CharCount {
 			freq[ch]++;
 			
 		}
-		
+		// added comment
 		for(int i=0;i<freq.length;i++) {
 			if(freq[i]>0) {
 				
